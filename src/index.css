@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 210 40% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 210 40% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 40% 15%;
+
+    --primary: 210 70% 40%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 20% 96%;
+    --secondary-foreground: 210 40% 15%;
+
+    --muted: 210 15% 96%;
+    --muted-foreground: 210 10% 45%;
+
+    --accent: 165 45% 40%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 210 15% 90%;
+    --input: 210 15% 90%;
+    --ring: 210 70% 40%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* Custom pharma tokens */
+    --section-alt: 210 20% 97%;
+    --pharma-blue-light: 210 50% 95%;
+    --pharma-green: 165 45% 40%;
+    --pharma-green-light: 165 30% 95%;
+    --pharma-navy: 210 60% 20%;
+    --trust-bar: 210 60% 35%;
+    --shadow-card: 0 2px 12px -2px hsl(210 30% 20% / 0.06);
+    --shadow-elevated: 0 8px 30px -6px hsl(210 30% 20% / 0.10);
+  }
+
+  .dark {
+    --background: 210 30% 6%;
+    --foreground: 210 15% 92%;
+    --card: 210 25% 10%;
+    --card-foreground: 210 15% 92%;
+    --popover: 210 25% 10%;
+    --popover-foreground: 210 15% 92%;
+    --primary: 210 60% 55%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 210 20% 15%;
+    --secondary-foreground: 210 15% 92%;
+    --muted: 210 20% 15%;
+    --muted-foreground: 210 10% 60%;
+    --accent: 165 40% 45%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 210 20% 18%;
+    --input: 210 20% 18%;
+    --ring: 210 60% 55%;
+    --sidebar-background: 210 25% 8%;
+    --sidebar-foreground: 210 10% 80%;
+    --sidebar-primary: 210 60% 55%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 210 20% 12%;
+    --sidebar-accent-foreground: 210 10% 80%;
+    --sidebar-border: 210 20% 15%;
+    --sidebar-ring: 210 60% 55%;
+    --section-alt: 210 25% 8%;
+    --pharma-blue-light: 210 30% 15%;
+    --pharma-green-light: 165 20% 12%;
+    --pharma-navy: 210 40% 8%;
+    --trust-bar: 210 50% 25%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: 'Playfair Display', serif;
+  }
+
+  .font-body {
+    font-family: 'Inter', sans-serif;
+  }
+
+  .bg-section-alt {
+    background-color: hsl(var(--section-alt));
+  }
+
+  .bg-pharma-blue-light {
+    background-color: hsl(var(--pharma-blue-light));
+  }
+
+  .bg-pharma-green-light {
+    background-color: hsl(var(--pharma-green-light));
+  }
+
+  .bg-pharma-navy {
+    background-color: hsl(var(--pharma-navy));
+  }
+
+  .bg-trust-bar {
+    background-color: hsl(var(--trust-bar));
+  }
+
+  .text-pharma-green {
+    color: hsl(var(--pharma-green));
+  }
+
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+
+  .shadow-elevated {
+    box-shadow: var(--shadow-elevated);
+  }
+
+  .animate-fade-up {
+    animation: fadeUp 0.6s ease-out forwards;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
